@@ -5,7 +5,9 @@ export default function Weather(props) {
   if (props.display) {
     return (
       <div className="Weather">
-        <strong>Weather for {props.weather.place}</strong>
+        <strong>
+          Weather for {props.weather.city}, {props.weather.country}
+        </strong>
         <ul>
           <li>Temperature : {props.weather.temp} °C</li>
           <li>Description : {props.weather.description}</li>

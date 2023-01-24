@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">React Weather App</header>
+      <header className="App-header">React Weather Application</header>
       <div class="container">
         <div class="card weather">
           <Search />
