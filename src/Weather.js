@@ -1,39 +1,92 @@
 import React from "react";
-import { MagnifyingGlass } from "react-loader-spinner";
+import "./Weather.css";
 
 export default function Weather(props) {
-  if (props.display) {
-    return (
-      <div className="Weather">
-        <strong>
-          Weather for {props.weather.city}, {props.weather.country}
-        </strong>
-        <ul>
-          <li>Temperature : {props.weather.temp} °C</li>
-          <li>Description : {props.weather.description}</li>
-          <li>Humidity : {props.weather.humidity} %</li>
-          <li>Wind : {props.weather.wind} meter/sec</li>
-          <li>
-            <img src={props.weather.icon} alt={props.weather.description} />
-          </li>
-        </ul>
+  return (
+    <div className="Weather">
+      <div className="CurrentWeather">
+        <h1>
+          {props.weather.city}, {props.weather.country}
+        </h1>
+        <div className="row city-temp">
+          <div className="col-4">
+            <span className="temp">{Math.round(props.weather.temp)}</span>
+            <span className="temp-unit">
+              <a href="/" className="link templink-c active">
+                °C
+              </a>
+              |
+              <a href="/" className="link templink-f">
+                °F
+              </a>
+            </span>
+          </div>
+          <div className="col-3">
+            <img
+              src={props.weather.icon}
+              alt={props.weather.description}
+              className="temp-icon"
+              width="100"
+            />
+          </div>
+          <div className="col-5">
+            <br />
+            <span className="date">Sunday, 12:00</span>
+            <br />
+            <span className="weather-description">
+              {props.weather.description}
+            </span>
+          </div>
+        </div>
       </div>
-    );
-  } else {
-    return (
-      <p>
-        <br />
-        <MagnifyingGlass
-          visible={true}
-          height="40"
-          width="80"
-          ariaLabel="MagnifyingGlass-loading"
-          wrapperStyle={{}}
-          wrapperClass="MagnifyingGlass-wrapper"
-          glassColor="#c0efff"
-          color="#e15b64"
-        />
-      </p>
-    );
-  }
+      <div className="WeatherDetails">
+        <div className="row">
+          <div className="col card1">
+            <i className="fa-solid fa-temperature-three-quarters"></i> Feels
+            like:
+            <br />
+            <span className="feels-like">
+              {Math.round(props.weather.feelsLike)}°
+            </span>
+          </div>
+          <div className="col card1">
+            <i className="fa-solid fa-temperature-arrow-up"></i> H:
+            <span className="temp-max">
+              {Math.round(props.weather.maxTemp)}°
+            </span>
+            <br />
+            <i className="fa-solid fa-temperature-arrow-down"></i> L:
+            <span className="temp-min">
+              {Math.round(props.weather.minTemp)}°
+            </span>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col card1">
+            <i className="fa-solid fa-droplet"></i> Humidity:
+            <br />
+            <span className="humidity">{props.weather.humidity}</span>%
+          </div>
+          <div className="col card1">
+            <i className="fa-solid fa-wind"></i> Wind:
+            <br />
+            <span className="wind">{props.weather.wind}</span>
+            m/s
+          </div>
+        </div>
+        <div className="row">
+          <div className="col card1">
+            <i className="fa-solid fa-sun"></i> Sunrise:
+            <br />
+            <span className="sunrise">23:59</span>
+          </div>
+          <div className="col card1">
+            <i className="fa-solid fa-moon"></i> Sunset:
+            <br />
+            <span className="sunset">00:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

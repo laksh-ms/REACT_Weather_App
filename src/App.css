@@ -7,17 +7,16 @@
 }
 
 .App-header,
-.Footer {
+.App .Footer {
   font-size: 10px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  margin: 3px auto;
+  padding: 5px;
 }
 
 .App .weather {
-  max-width: 500px;
+  max-width: 400px;
   text-align: center;
   margin: 10px auto;
   padding: 20px;
   border-radius: 10px;
-  background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
