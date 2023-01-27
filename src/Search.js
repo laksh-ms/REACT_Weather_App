@@ -4,6 +4,7 @@ import axios from "axios";
 import Weather from "./Weather";
 
 import { MagnifyingGlass } from "react-loader-spinner";
+import FormattedDate from "./FormattedDate";
 
 export default function Search() {
   const [city, setCity] = useState("Bengaluru");
@@ -39,6 +40,7 @@ export default function Search() {
           response.data.sys.sunset * 1000 +
           timeOffSet * 60000 +
           response.data.timezone * 1000,
+        lastUpdated: response.data.dt * 1000,
       });
       console.log(weatherDetails.sunSet > weatherDetails.date);
       console.log(weatherDetails.date > weatherDetails.sunRise);
@@ -116,6 +118,17 @@ export default function Search() {
           </form>
           <br />
           <Weather weather={weatherDetails} />
+          <div className="row ">
+            <div className="col-5 d-flex justify-content-start">
+              <span className="lastUpdated" id="lastUpdated">
+                Last updated:
+                <FormattedDate timestamp={weatherDetails.lastUpdated} />
+              </span>
+            </div>
+            <div className="col-7 d-flex justify-content-end">
+              <span>Weather for {weatherDetails.city}</span>
+            </div>
+          </div>
         </div>
       </div>
     );

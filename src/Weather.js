@@ -1,4 +1,5 @@
 import React from "react";
+import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -31,7 +32,7 @@ export default function Weather(props) {
           </div>
           <div className="col-5">
             <br />
-            <span className="date">Sunday, 12:00</span>
+            <FormattedDate timestamp={props.weather.date} />
             <br />
             <span className="weather-description">
               {props.weather.description}
