@@ -1,0 +1,15 @@
+.Search .LastUpdated {
+  font-size: 12px;
+  margin: 0;
+  padding: 3px;
+}
+.Search .card {
+  max-width: 450px;
+  text-align: center;
+  margin: 5px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+.Search form {
+  padding-bottom: 20px;
+}

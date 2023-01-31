@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import FormattedSunTime from "./FormattedSunTime";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -9,8 +10,14 @@ export default function Weather(props) {
         <h1>
           {props.weather.city}, {props.weather.country}
         </h1>
+        <p>
+          <FormattedDate timestamp={props.weather.date} /> ⏐{" "}
+          <span className="weather-description">
+            {props.weather.description}
+          </span>
+        </p>
         <div className="row city-temp">
-          <div className="col-4">
+          <div className="col-5">
             <span className="temp">{Math.round(props.weather.temp)}</span>
             <span className="temp-unit">
               <a href="/" className="link templink-c active">
@@ -22,21 +29,13 @@ export default function Weather(props) {
               </a>
             </span>
           </div>
-          <div className="col-3">
+          <div className="col-7">
             <img
               src={props.weather.icon}
               alt={props.weather.description}
               className="temp-icon"
               width="100"
             />
-          </div>
-          <div className="col-5">
-            <br />
-            <FormattedDate timestamp={props.weather.date} />
-            <br />
-            <span className="weather-description">
-              {props.weather.description}
-            </span>
           </div>
         </div>
       </div>
@@ -79,12 +78,12 @@ export default function Weather(props) {
           <div className="col card1">
             <i className="fa-solid fa-sun"></i> Sunrise:
             <br />
-            <span className="sunrise">23:59</span>
+            <FormattedSunTime timestamp={props.weather.sunRise} />
           </div>
           <div className="col card1">
             <i className="fa-solid fa-moon"></i> Sunset:
             <br />
-            <span className="sunset">00:00</span>
+            <FormattedSunTime timestamp={props.weather.sunSet} />
           </div>
         </div>
       </div>

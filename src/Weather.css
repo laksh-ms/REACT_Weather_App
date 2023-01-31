@@ -1,6 +1,7 @@
 .Weather h1 {
-  font-size: 45px;
-  color: white;
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
 }
 .Weather .weather-description {
   text-transform: capitalize;
@@ -9,7 +10,7 @@
   font-size: 56px;
 }
 .Weather .temp-unit {
-  font-size: 13px;
+  font-size: 15px;
   position: relative;
   top: -30px;
 }

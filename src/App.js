@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <header className="App-header">React Weather Application</header>
       <div className="container">
-        <Search />
+        <Search defaultCity="New Delhi" />
       </div>
       <footer className="Footer">
         Coded by{" "}
