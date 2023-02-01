@@ -22,7 +22,7 @@ export default function Search(props) {
     if (response.status === 200) {
       setWeatherDetails({
         ready: true,
-        icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+        icon: response.data.weather[0].icon,
         city: response.data.name,
         country: response.data.sys.country,
         temp: response.data.main.temp,
@@ -66,10 +66,10 @@ export default function Search(props) {
         response.data.sys.sunrise < response.data.dt &&
         response.data.dt < response.data.sys.sunset
       ) {
-        setAppBg(`-225deg, #5d9fff 0%, #b8dcff 48%, #6bbbff 100%`);
+        setAppBg(`to top, #e14fad 0%, #FFD982 100%`);
         setAppImage(day);
       } else {
-        setAppBg(`to top, #6a85b6 0%, #bac8e0 100%`);
+        setAppBg(`to top, #004799 0%, #83cef7 100%`);
         setAppImage(night);
       }
     }
@@ -113,6 +113,7 @@ export default function Search(props) {
           backgroundImage: `url(${appImage})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: `contain`,
+          backgroundPosition: `center`,
           width: `100%`,
         }}
       >

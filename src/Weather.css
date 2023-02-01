@@ -1,26 +1,43 @@
 .Weather h1 {
   margin: 0;
   padding: 0;
-  font-size: 40px;
+  font-size: 35px;
 }
 .Weather .weather-description {
   text-transform: capitalize;
 }
 .Weather .temp {
-  font-size: 56px;
+  font-size: 60px;
+  margin-left: 5px;
 }
-.Weather .temp-unit {
-  font-size: 15px;
+.Weather .unit {
+  font-size: 18px;
+  line-height: 1;
   position: relative;
-  top: -30px;
+  bottom: -20px;
 }
 .Weather .card1 {
   text-align: center;
-  border: 0.5px solid gray;
+  border: 0.5px solid rgb(235, 233, 233);
   border-radius: 10px;
-  margin: 10px 15px 5px 15px;
+  margin: 5px 12px 3px 12px;
   padding: 5px;
-  box-shadow: 3px 3px 0.5px rgb(111, 111, 111);
+  box-shadow: 2px 2px 0.5px rgb(50, 50, 50);
   background: transparent;
-  opacity: 90%;
+}
+.Weather a.link {
+  color: rgb(1, 1, 91);
+  text-decoration: none;
+}
+.Weather a.link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.Weather a.active {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+.Weather a.active:hover {
+  cursor: default;
 }

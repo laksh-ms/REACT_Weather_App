@@ -1,7 +1,12 @@
+.Search {
+  margin: 0 auto;
+  display: block;
+  color: rgb(255, 255, 255);
+}
 .Search .LastUpdated {
   font-size: 12px;
   margin: 0;
-  padding: 3px;
+  padding: 0;
 }
 .Search .card {
   max-width: 450px;
