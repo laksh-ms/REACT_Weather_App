@@ -3,11 +3,21 @@ import FormattedDate from "./FormattedDate";
 import FormattedSunTime from "./FormattedSunTime";
 import Temperature from "./Temperature";
 import "./Weather.css";
+import WeatherForecast from "./WeatherForecast";
 import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(props) {
   const [unit, setUnit] = useState("metric");
+  /*let localDate = new Date();
+  let timeOffSet = localDate.getTimezoneOffset();
+  let cityDate =
+    props.weather.date + timeOffSet * 60000 + props.weather.timezone;
+  let citySunrise =
+    props.weather.sunRise + timeOffSet * 60000 + props.weather.timezone;
 
+  let citySunsets =
+    props.weather.sunSet + timeOffSet * 60000 + props.weather.timezone;
+*/
   return (
     <div className="Weather">
       <div className="CurrentWeather">
@@ -21,7 +31,7 @@ export default function Weather(props) {
           </span>
         </p>
         <div className="d-flex justify-content-center">
-          <WeatherIcon icon={props.weather.icon} />
+          <WeatherIcon icon={props.weather.icon} size={80} />
           <span className="temp">
             <Temperature unit={unit} temp={props.weather.temp} />
           </span>
@@ -97,6 +107,7 @@ export default function Weather(props) {
           </div>
         </div>
       </div>
+      <WeatherForecast coords={props.weather.coords} />
     </div>
   );
 }

@@ -4,17 +4,18 @@
   color: rgb(255, 255, 255);
 }
 .Search .LastUpdated {
-  font-size: 12px;
+  font-size: 10px;
   margin: 0;
   padding: 0;
 }
 .Search .card {
-  max-width: 450px;
+  border: 0.5px solid rgb(235, 233, 233);
+  max-width: 400px;
   text-align: center;
-  margin: 5px auto;
-  padding: 20px;
+  margin: 10px auto;
+  padding: 15px;
   border-radius: 10px;
 }
 .Search form {
-  padding-bottom: 20px;
+  padding-bottom: 12px;
 }

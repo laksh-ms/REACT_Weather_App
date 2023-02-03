@@ -18,7 +18,6 @@ export default function Search(props) {
   function handleWeather(response) {
     let localDate = new Date();
     let timeOffSet = localDate.getTimezoneOffset();
-    console.log(response);
     if (response.status === 200) {
       setWeatherDetails({
         ready: true,
@@ -46,22 +45,8 @@ export default function Search(props) {
           response.data.timezone * 1000,
         lastUpdated: response.data.dt * 1000,
         timezone: response.data.timezone + 1000,
+        coords: response.data.coord,
       });
-      /*console.log("set>CT:", weatherDetails.sunSet > weatherDetails.date);
-      console.log("CT>Rise:", weatherDetails.date > weatherDetails.sunRise);
-      console.log(
-        "Rise",
-        weatherDetails.sunRise,
-        "frmRes:",
-        response.data.sys.sunrise
-      );
-      console.log("CT:", weatherDetails.date, "frmRes:", response.data.dt);
-      console.log(
-        "Set:",
-        weatherDetails.sunSet,
-        "frmRes:",
-        response.data.sys.sunset
-      );*/
       if (
         response.data.sys.sunrise < response.data.dt &&
         response.data.dt < response.data.sys.sunset
@@ -149,12 +134,16 @@ export default function Search(props) {
             </div>
           </form>
           <Weather weather={weatherDetails} />
-          <br />
           <div className="LastUpdated fw-lighter">
-            Weather for {weatherDetails.city}
-            <br />
-            Last updated:{" "}
-            <FormattedDate timestamp={weatherDetails.lastUpdated} />
+            <div className="row">
+              <div className="col-6 text-start">
+                Last updated:{" "}
+                <FormattedDate timestamp={weatherDetails.lastUpdated} />
+              </div>
+              <div className="col-6 text-end">
+                Weather for {weatherDetails.city}
+              </div>
+            </div>
           </div>
         </div>
       </div>

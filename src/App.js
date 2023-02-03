@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <header className="App-header">React Weather Application</header>
       <div className="container">
-        <Search defaultCity="New Delhi" />
+        <Search defaultCity="Mysore" />
       </div>
       <footer className="Footer">
         Coded by{" "}
@@ -18,11 +18,20 @@ export default function App() {
           rel="noreferrer"
         >
           Lakshmi M Satyananda <i className="fa-brands fa-linkedin"></i>
-        </a>{" "}
-        and{" "}
-        <a href="https://github.com/laksh-ms" target="_blank" rel="noreferrer">
-          Open-Sourced on github <i className="fa-brands fa-github"></i>
         </a>
+        , Open-Sourced on{" "}
+        <a href="https://github.com/laksh-ms" target="_blank" rel="noreferrer">
+          github <i className="fa-brands fa-github"></i>
+        </a>{" "}
+        and hosted on{" "}
+        <a
+          href="https://fastidious-kashata-2137a2.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Netlify
+        </a>
+        .
       </footer>
     </div>
   );

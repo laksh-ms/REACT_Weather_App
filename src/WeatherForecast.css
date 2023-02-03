@@ -1,0 +1,25 @@
+.WeatherForecast {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 15px;
+}
+.WeatherForecast .forecast-day {
+  padding-bottom: 2px;
+}
+.WeatherForecast.card2 {
+  text-align: center;
+  border: 0.5px solid rgb(235, 233, 233);
+  border-radius: 10px;
+  margin: 12px auto;
+  padding: 5px;
+  box-shadow: 2px 2px 0.5px rgb(50, 50, 50);
+  background: transparent;
+}
+.WeatherForecast .minForecast,
+.maxForecast {
+  font-size: 12px;
+}
+.WeatherForecast .minForecast {
+  opacity: 60%;
+  margin-left: 3px;
+}
