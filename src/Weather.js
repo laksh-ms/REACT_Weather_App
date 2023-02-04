@@ -36,6 +36,7 @@ export default function Weather(props) {
             <Temperature unit={unit} temp={props.weather.temp} />
           </span>
           <span className="unit">
+            °{" "}
             <a
               href="/"
               className={unit === "metric" ? "active" : "link"}
@@ -44,7 +45,7 @@ export default function Weather(props) {
                 setUnit("metric");
               }}
             >
-              °C
+              C
             </a>
             ⏐
             <a
@@ -55,7 +56,7 @@ export default function Weather(props) {
                 setUnit("imperial");
               }}
             >
-              °F
+              F
             </a>
           </span>
         </div>

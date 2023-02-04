@@ -26,7 +26,8 @@
   background: transparent;
 }
 .Weather a.link {
-  color: rgb(1, 1, 91);
+  color: rgb(19, 19, 19);
+  opacity: 50%;
   text-decoration: none;
 }
 .Weather a.link:hover {
