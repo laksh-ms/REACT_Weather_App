@@ -8,16 +8,6 @@ import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(props) {
   const [unit, setUnit] = useState("metric");
-  /*let localDate = new Date();
-  let timeOffSet = localDate.getTimezoneOffset();
-  let cityDate =
-    props.weather.date + timeOffSet * 60000 + props.weather.timezone;
-  let citySunrise =
-    props.weather.sunRise + timeOffSet * 60000 + props.weather.timezone;
-
-  let citySunsets =
-    props.weather.sunSet + timeOffSet * 60000 + props.weather.timezone;
-*/
   return (
     <div className="Weather">
       <div className="CurrentWeather">
